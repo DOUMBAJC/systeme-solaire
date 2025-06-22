@@ -41,17 +41,24 @@ body {
     position: absolute;
     color: white;
     font-family: Arial, sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     white-space: nowrap;
-    top: -20px;
+    top: -25px;
     left: 50%;
     transform: translateX(-50%);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.5),
+        0 0 10px rgba(0, 0, 0, 0.8);
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px 8px;
+    border-radius: 10px;
 }
 
-/* Planètes au survol */
+/* Affichage des noms */
 .sun:hover .planet-name,
 .mercury:hover .planet-name,
 .venus:hover .planet-name,
@@ -63,6 +70,21 @@ body {
 .neptune:hover .planet-name,
 .satellite:hover .planet-name {
     opacity: 1;
+}
+
+.sun .planet-name {
+    top: -40px;
+    font-size: 16px;
+}
+
+.jupiter .planet-name,
+.saturn .planet-name {
+    top: -35px;
+}
+
+.satellite .planet-name {
+    top: -15px;
+    font-size: 12px;
 }
 
 /* Soleil */
